@@ -1,22 +1,20 @@
-# Hangman
+# Hangman 
 
-A responsive Hangman game built with vanilla HTML, CSS, and JavaScript. The game rules and round state are encapsulated in the `HangmanGame` class, browser-only stats use `HangmanStats`, and `HangmanUI` manages rendering and input. Pick from five word categories, guess with the on-screen or physical keyboard, and track your win rate and best streak.
+A classic word-guessing game where players try to uncover a hidden word by guessing letters before running out of attempts.
 
-## Run locally
+## Features
+- Random word selection
+- Interactive letter guessing
+- Limited attempts
+- Win and lose conditions
 
-From this folder, run:
+## Technologies Used
+- HTML
+- CSS
+- JavaScript
 
-```sh
-python3 -m http.server 8000
-```
+## Project Type
+Personal Project
 
-Then open `http://localhost:8000`.
-
-## Deploy to Vercel
-
-1. Push this folder to a Git repository.
-2. In Vercel, import the repository and set the project root to this `Hangman` folder.
-3. Use the **Other** framework preset. No build command, install command, or environment variables are needed; serve the project root as the output directory.
-4. Deploy. The game is available at the root of the deployed site.
-
-This is a static game. It does not need a Render backend or Firebase: the word bank ships with the page, and game stats are stored in the player's browser.
+## Developer
+Daniella Marie D. Atian
