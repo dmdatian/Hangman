@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0b1017" />
+    <meta name="description" content="A little word play: guess the hidden word in this quick Hangman game." />
+    <title>Hangman — Word Guessing Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/hangman.css" />
+    <script src="/hangman.js" defer></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="Hangman home">
+          <span class="brand-mark" aria-hidden="true">H</span>
+          <span>hangman</span>
+        </a>
+      </header>
+
+      <main>
+        <section class="hangman-intro" aria-labelledby="page-title">
+          <div class="eyebrow"><span class="live-dot"></span> A QUICK WORD GAME</div>
+          <h1 id="page-title">A little word <span>play.</span></h1>
+          <p>Find the hidden word before you run out of guesses.</p>
+        </section>
+
+        <section class="hangman-card" aria-label="Hangman game">
+          <div class="hangman-toolbar">
+            <div class="category-summary">
+              <span class="hangman-overline">WORD CATEGORY</span>
+              <strong id="category-name">Mixed bag</strong>
+            </div>
+            <label class="category-picker" for="category-select">
+              <span>Choose a category</span>
+              <select id="category-select">
+                <option value="all">Mixed bag</option>
+                <option value="animals">Animals</option>
+                <option value="nature">Nature</option>
+                <option value="technology">Technology</option>
+                <option value="food">Food</option>
+                <option value="travel">Travel</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="hangman-layout">
+            <section class="hangman-visual" aria-label="Word and hangman drawing">
+              <div class="mistakes-counter">
+                <span class="hangman-overline">INCORRECT GUESSES</span>
+                <strong id="mistakes-count">0 / 6</strong>
+              </div>
+              <svg class="hangman-drawing" viewBox="0 0 220 230" role="img" aria-labelledby="drawing-title">
+                <title id="drawing-title">Hangman drawing showing incorrect guesses</title>
+                <g class="drawing-structure">
+                  <path d="M25 210h170M58 210V20h92v22" />
+                </g>
+                <g class="hangman-part" id="part-head"><circle cx="150" cy="61" r="20" /></g>
+                <g class="hangman-part" id="part-body"><path d="M150 81v58" /></g>
+                <g class="hangman-part" id="part-left-arm"><path d="m150 96-27 25" /></g>
+                <g class="hangman-part" id="part-right-arm"><path d="m150 96 27 25" /></g>
+                <g class="hangman-part" id="part-left-leg"><path d="m150 139-25 34" /></g>
+                <g class="hangman-part" id="part-right-leg"><path d="m150 139 25 34" /></g>
+              </svg>
+              <div class="word-display" id="word-display" aria-label="Hidden word"></div>
+            </section>
+
+            <section class="hangman-play" aria-label="Guess a letter">
+              <p class="round-message" id="round-message" role="status" aria-live="polite">
+                Pick a letter to get started.
+              </p>
+              <div class="letter-keyboard" id="letter-keyboard" role="group" aria-label="Letter keyboard"></div>
+              <div class="hangman-actions">
+                <p class="keyboard-hint">Click a letter or type it on your keyboard.</p>
+                <button class="new-game-button" id="new-game-button" type="button">
+                  <span aria-hidden="true">↻</span> New game
+                </button>
+              </div>
+            </section>
+          </div>
+        </section>
+
+        <section class="hangman-stats" aria-label="Your Hangman stats">
+          <div class="hangman-stat">
+            <span class="hangman-overline">ROUNDS</span>
+            <strong id="rounds-played">0</strong>
+          </div>
+          <div class="hangman-stat">
+            <span class="hangman-overline">WIN RATE</span>
+            <strong id="win-rate">—</strong>
+          </div>
+          <div class="hangman-stat">
+            <span class="hangman-overline">BEST STREAK</span>
+            <strong id="best-streak">0</strong>
+          </div>
+          <p class="stats-note" id="stats-note" role="status">Stats are saved on this device.</p>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <a class="brand footer-brand" href="/"><span class="brand-mark" aria-hidden="true">H</span><span>hangman</span></a>
+        <span>One letter at a time.</span>
+      </footer>
+    </div>
+  </body>
+</html>
